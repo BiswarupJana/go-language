@@ -12,7 +12,11 @@ func (p ProfitCalculator) ebt() float64 {
 	return p.revenue - p.expense
 }
 func (p ProfitCalculator) eat() float64 {
-	return p.ebt() - (p.ebt() * p.taxRate)
+    return p.ebt() * (1 - p.taxRate/100)
+}
+//ratio function
+func (p ProfitCalculator) ratio() float64 {
+	return p.ebt() / p.eat()
 }
 func main() {
 	var amounts ProfitCalculator
@@ -26,6 +30,7 @@ func main() {
 
 	fmt.Println("Earnings Before Tax: ", amounts.ebt())
 	fmt.Println("Earnings After Tax: ", amounts.eat())
+	fmt.Println("Profit Ratio: ", amounts.ratio())
 
 	
 
