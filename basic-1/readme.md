@@ -38,3 +38,78 @@ Here's a list of the null values for the different types:
 - **float64**: 0.0
 - **string**: "" (i.e., an empty string)
 - **bool**: false
+
+## Value Declaration in Go
+
+Overview
+
+In Go, values can be declared using var, const, or := (short declaration). Each method has specific use cases based on whether the value is mutable, immutable, or inferred from the assigned value.
+
+Default Values in Go
+
+When variables are declared without an explicit value, they take on the following default (zero) values:
+
+**int**
+
+int: 0
+
+**float64**
+
+float64: 0.0
+
+**string**
+
+string: "" (i.e., an empty string)
+
+**bool**
+
+bool: false
+
+Example:
+
+```go
+var age int // age is 0
+```
+
+Value Declaration Methods
+
+1. Using var
+
+The var keyword is used for declaring variables explicitly. You can specify the type or let Go infer it.
+
+```go
+var a int = 10     // Explicit type declaration
+var b = "Hello"   // Type inferred from assigned value
+var c float64     // Type inferred from assigned value
+```
+
+2.Using const
+
+The const keyword is used for declaring constants, which are immutable.
+
+```go
+const a = 10     // Constant declaration
+const b = "Hello"   // Constant declaration
+const c float64     // Constant declaration
+```
+
+3.Using :=
+
+The := operator is used for declaring variables and constants in a single statement. It is a shorthand for var and const.
+
+```go
+a := 10     // Variable declaration
+b := "Hello"   // Variable declaration
+c := float64     // Variable declaration
+```
+### Notes
+
+Variables declared using var at the package level cannot use :=.
+
+Constants cannot be declared using :=.
+
+Unused variables cause compilation errors in Go.
+
+Conclusion
+
+Go provides multiple ways to declare values, each suited for different use cases. Understanding when to use var, const, or := helps in writing clean and efficient Go code.
